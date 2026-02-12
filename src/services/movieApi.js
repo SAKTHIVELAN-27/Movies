@@ -310,7 +310,7 @@ export const getRecommendations = async (movieId) => {
   }
 };
 
-export default {
+const movieApi = {
   fetchMoviesByMood,
   fetchPopularMovies,
   fetchTrendingMovies,
@@ -320,3 +320,5 @@ export default {
   fetchAllMoodMovies,
   getRecommendations,
 };
+
+export default movieApi;
