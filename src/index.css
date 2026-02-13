@@ -4,6 +4,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Mulish:wght@400;700&display=swap');
 
+/* Hide scrollbar for sidebar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar globally */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+}
+
 @layer base {
   button,
   input,

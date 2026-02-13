@@ -4,7 +4,8 @@ import axios from "axios";
 // Note: In production, use environment variables for API keys
 const TMDB_API_KEY = "2dca580c2a14b55200e784d157207b4d"; // Free public demo key
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
-const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
+const TMDB_IMAGE_BASE = "https://image.tmdb.org/t/p/w780"; // Higher quality poster images
+const TMDB_BACKDROP_BASE = "https://image.tmdb.org/t/p/w1280"; // High quality backdrop images
 
 // Create axios instance for TMDB
 const tmdbApi = axios.create({
@@ -100,7 +101,7 @@ const transformMovie = (tmdbMovie, moodId = null) => {
       ? `${TMDB_IMAGE_BASE}${tmdbMovie.poster_path}`
       : "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=450&fit=crop",
     backdrop: tmdbMovie.backdrop_path
-      ? `${TMDB_IMAGE_BASE}${tmdbMovie.backdrop_path}`
+      ? `${TMDB_BACKDROP_BASE}${tmdbMovie.backdrop_path}`
       : null,
     moods: moodId ? [moodId] : getMoodsForGenres(tmdbMovie.genre_ids || []),
     tmdbId: tmdbMovie.id,

@@ -48,7 +48,7 @@ const HeroBanner = ({ movies, currentMood }) => {
         }`}
       >
         <img
-          src={currentMovie.poster}
+          src={currentMovie.backdrop || currentMovie.poster}
           alt={currentMovie.title}
           className="w-full h-full object-cover"
         />
@@ -80,23 +80,23 @@ const HeroBanner = ({ movies, currentMood }) => {
           )}
 
           {/* Title */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
             {currentMovie.title}
           </h1>
 
           {/* Meta Info */}
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-yellow-400 font-semibold flex items-center gap-1">
+            <span className="text-yellow-400 font-semibold flex items-center gap-1 drop-shadow-md">
               ⭐ {currentMovie.rating}
             </span>
-            <span className="text-gray-300">{currentMovie.year}</span>
-            <span className="px-3 py-1 bg-gray-700/80 rounded-full text-gray-300 text-sm">
+            <span className="text-white font-medium drop-shadow-md">{currentMovie.year}</span>
+            <span className="px-3 py-1 bg-gray-800/90 backdrop-blur-sm rounded-full text-white text-sm font-medium">
               {currentMovie.genre}
             </span>
           </div>
 
           {/* Description */}
-          <p className="text-gray-300 text-lg mb-6 line-clamp-3">
+          <p className="text-cyan-100 text-lg mb-6 line-clamp-5 leading-relaxed drop-shadow-lg bg-gradient-to-r from-gray-900/80 to-gray-800/60 backdrop-blur-md p-4 rounded-xl max-w-xl border border-cyan-500/20">
             {currentMovie.description}
           </p>
 
