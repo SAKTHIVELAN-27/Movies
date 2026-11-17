@@ -49,7 +49,6 @@ yarn-error.log*
 
 .env*.local
 
-config.bat
 
 temp_auto_push.bat
 
